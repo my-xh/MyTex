@@ -11,13 +11,23 @@
 
 
 def lines(file):
-    """逐行获取文件内容，最后以换行符结束"""
+    """
+    逐行获取文件内容，最后以换行符结束
+
+    :param file: 文件
+    :return: 一行内容
+    """
     yield from file
     yield '\n'
 
 
 def blocks(file):
-    """获取所有文本块，一个文本块由空行之前的所有行组成"""
+    """
+    获取所有文本块，一个文本块由空行之前的所有行组成
+
+    :param file: 文件
+    :return: 文本块
+    """
     block = []
     for line in lines(file):
         if line.strip():
